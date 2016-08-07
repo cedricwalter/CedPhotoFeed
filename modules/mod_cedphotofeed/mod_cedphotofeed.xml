@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="3.4" type="module" client="site" method="upgrade">
+    <name>CedPhotoFeed | Galaxiis.com</name>
+    <creationDate>2016-08-05</creationDate>
+
+    <version>1.2.0</version>
+
+    <author>Galaxiis</author>
+    <authorEmail>galaxiiscom@gmail.com</authorEmail>
+    <authorUrl>www.galaxiis.com</authorUrl>
+
+    <copyright>Copyright (C) 2013-2016 galaxiis.com All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL 3.0</license>
+
+    <description>This module allow you to insert into any module position a set of images from your favorite online
+        gallery:
+        SmugMug, Flickr, Picasa, Gallery2, Gallery3, Youtube or any other RSS feed in any article.
+    </description>
+
+    <files>
+        <filename module="mod_cedphotofeed">mod_cedphotofeed.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+
+    <languages>
+        <language tag="en-GB">en-GB.mod_cedphotofeed.ini</language>
+        <language tag="en-GB">en-GB.mod_cedphotofeed.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field shortId="cedphotofeed"
+                       name="toolbar"
+                       type="galaxiisbar"/>
+                <field
+                        name="message"
+                        type="galaxiismessage"
+                        message="note"
+                        label="Please help us: vote, suggest and give us your opinion in the Joomla extensions directory. With this you will help us to increase our interest to modify and update the extension. Thank you very much."/>
+                <field
+                        name="version_msg"
+                        type="galaxiismessage"
+                        message="version"
+                        version="1.2.0"
+                        extension_name="CedPhotoFeed"/>
+            </fieldset>
+            <fieldset name="RSS Feed" label="RSS Feed">
+                <field name="uri" type="text" default="" label="Url" size="150"
+                       required="true"
+                       description="Can be a SmugMug, Flickr, Picasa, Gallery2, Gallery3 or Youtube RSS feed, see manual how to get it correctly"/>
+                <field name="limit" type="text"
+                       size="3" required="true"
+                       default="10" label="Display #" description="Number of images to display from feed"/>
+                <field name="from" type="text" default="0" label="Start at picture" size="3"
+                       required="true"
+                       description="Start displaying images from feed by starting at this position."/>
+
+                <field name="rss-cache-time" type="integer"
+                       required="true"
+                       default="3600" label="Cache Duration"
+                       description="This is the number of seconds that you want to store the cache file for."
+                       first="3600"
+                       last="86400"
+                       step="3600"/>
+
+
+            </fieldset>
+
+            <fieldset name="Rendering" label="Rendering">
+                <field name="rendering" type="radio" default="Rokbox" label="Library"
+                       description="If rokbow, install http://www.rockettheme.com/extensions-joomla/rokbox">
+                    <option value="Html">html</option>
+                    <option value="Rokbox2">rokbox</option>
+
+                    <option disabled="1" value="Rokbox">rokbox</option>
+                    <option disabled="1" value="Lightbox2">lightbox2</option>
+                    <option disabled="1" value="Lightbox">lightbox</option>
+                    <option disabled="1" value="Shadowbox">shadowbox</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="Ordering" label="Ordering">
+
+                <field name="sorting" type="list" default="none" label="Sorting using"
+                       description="In RSS feed pictures are not always sorted by date">
+                    <option value="none">none</option>
+                    <option value="random">random</option>
+                    <option disabled="1" value="exif">exif use embeded data from pictures
+                    </option>
+                    <option disabled="1" value="reverse">reverse last images from the rss will
+                        be the first to be displayed in the list
+                    </option>
+                </field>
+
+            </fieldset>
+
+            <fieldset name="Appearance" label="Appearance">
+
+                <field name="contentlayout" type="list" default="Flow" label="Content Layout"
+                       description="How images will be displayed">
+                    <option value="Grid">grid (see Default Number of columns)</option>
+                    <option value="Flow">flow use as much space as provided</option>
+                </field>
+                <field name="NumberOfColumns" type="text" default="3" label="Default Number of columns" required="true"
+                       description="Only valid for grid Layout! Number of columns to display images, can be overriden using columns="/>
+
+
+                <field name="displayGalleryTitle"
+                       type="radio" default="1"
+                       label="Gallery Title"
+                       description="Display Gallery Title"
+                       class=".btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="displayGalleryDescription"
+                       type="radio" default="1"
+                       label="Gallery Description"
+                       description="Display Gallery Title"
+                       class=".btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="displayLinkToGallery" type="radio"
+                       default="1" label="Gallery Link"
+                       description="Add a link automatically below the wall of thumbnail that point to th gallery"
+                       class=".btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="DefaultImage" type="text" default="plugins/content/photofeed/notfound.jpg"
+                       label="Default image" size="50" required="true"
+                       description="If some images can not be detected from the rss stream, the plugin will replace them with this one"/>
+
+            </fieldset>
+
+            <fieldset name="SmugMug" label="SmugMug">
+
+                <field name="smugmugThumbSize" type="list" default="L" label="Thumb Size"
+                       description="SmugMug only: thumbnails picture size">
+                    <option value="Ti">100x75 pixels</option>
+                    <option value="Th">150x113 pixels</option>
+
+                </field>
+
+                <field name="smugmugSize" type="list" default="L" label="Picture Size"
+                       description="SmugMug only: size of the picture">
+                    <option value="S">400x300 pixels Small</option>
+                    <option value="M">600x450 pixels Medium</option>
+                    <option value="L">800x600 pixels Large</option>
+                    <option value="XL">1024x768 pixels XLarge</option>
+                    <option value="X2">1280x960 pixels X2Large</option>
+                    <option value="X3">1600x1200 pixels X3Large</option>
+                    <option value="O">Original</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="Flickr" label="Flickr">
+                <field name="flickrSize" type="list" default="0" label="Picture Size"
+                       description="Flickr only: size of the picture">
+                    <option value="0">Square</option>
+                    <option value="1">Thumb</option>
+                    <option value="2">Small</option>
+                    <option value="3">Medium</option>
+                    <option value="4">Large</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="Picasa" label="Picasa">
+                <field name="picasaSize" type="list" default="0" label="Picture Size"
+                       description="SmugMug only: size of the picture">
+                    <option value="0">48x72 pixels Small</option>
+                    <option value="1">96x144 pixels Medium</option>
+                    <option value="2">192x288 pixels Large</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="Gallery G2" label="Gallery G2">
+
+                <field name="g2Width" type="text" length="25" default="150px" label="Gallery2 image Width"
+                       required="true"
+                       description="Gallery2 only: Width of images, use % or px"/>
+                <field name="g2Height" type="text" length="25" default="150px" label="Gallery2 image Height"
+                       required="true"
+                       description="Gallery2 only: Height of images, use % or px"/>
+            </fieldset>
+
+            <fieldset name="Generic Galleries" label="Generic Galleries">
+                <field name="genericWidth" type="text" length="25" default="150px" label="Gallery image Width"
+                       required="true"
+                       description="Gallery: Width of images, use % or px"/>
+                <field name="genericHeight" type="text" length="25" default="150px" label="Gallery image Height"
+                       required="true"
+                       description="Gallery: Height of images, use % or px"/>
+            </fieldset>
+
+
+            <fieldset name="Caching" label="Caching">
+                <field name="enableHtmlCache" type="radio" default="1"
+                       label="HTML Cache" description="Enable caching of HTML result."
+                       class=".btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="htmlCachetime" type="text" default="3600" label="Html Cache time"
+                       description="Cache time in seconds for HTML result per feed" required="true"/>
+                <field name="enableRssCache" type="radio" default="1" label="RSS Cache"
+                       description="Enable caching of Rss feed result."
+                       class=".btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="RssCachetime" type="text" default="3600" label="RSS Cache time"
+                       description="Cache time in seconds for rss feed" required="true"/>
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL"
+                       description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                       description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL"
+                       description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                       description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"/>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

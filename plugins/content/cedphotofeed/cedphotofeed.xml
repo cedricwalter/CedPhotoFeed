@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="content" method="upgrade">
+    <name>CedPhotoFeed | Galaxiis.com</name>
+    <creationDate>2016-08-05</creationDate>
+
+    <version>1.2.0</version>
+
+    <author>Galaxiis</author>
+    <authorEmail>galaxiiscom@gmail.com</authorEmail>
+    <authorUrl>www.galaxiis.com</authorUrl>
+
+    <copyright>Copyright (C) 2013-2016 galaxiis.com All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL 3.0</license>
+
+    <description>PLG_CONTENT_CEDPHOTOFEED_DESCRIPTION</description>
+
+    <files>
+        <filename plugin="cedphotofeed">cedphotofeed.php</filename>
+        <filename plugin="cedphotofeed">cedphotofeedparser.php</filename>
+        <filename>index.html</filename>
+        <folder>language</folder>
+    </files>
+
+    <config addfieldpath="libraries/galaxiis/fields">
+        <fields name="params">
+            <fieldset name="basic">
+                <field shortId="cedphotofeed"
+                       name="toolbar"
+                       type="galaxiisbar"/>
+                <field
+                        name="message"
+                        type="galaxiismessage"
+                        message="note"
+                        label="Please help us: vote, suggest and give us your opinion in the Joomla extensions directory. With this you will help us to increase our interest to modify and update the extension. Thank you very much."/>
+                <field
+                        name="version_msg"
+                        type="galaxiismessage"
+                        message="version"
+                        version="1.2.0"
+                        extension_name="CedPhotoFeed"/>
+
+
+                <field name="rss-cache-time" type="integer"
+                       required="true"
+                       default="3600" label="PLG_CONTENT_CEDPHOTOFEED_CACHE_DURATION"
+                       description="PLG_CONTENT_CEDPHOTOFEED_CACHE_DURATION_DESC"
+                       first="3600"
+                       last="86400"
+                       step="3600"/>
+            </fieldset>
+
+            <fieldset name="Rendering" label="PLG_CONTENT_CEDPHOTOFEED_TAB_RENDERING">
+                <field name="spacerRendering" type="spacer"
+                       label="&lt;div style=&quot;
+                       font-weight:bold;font-size:11px;color:#000;padding:8px;margin:0;background:#ffd;&quot;&gt;
+                       'More Library support?'
+                       &lt;a target=&quot;_blank&quot; href=&quot;http://www.galaxiis.com/cedphotofeed-subscribe/&quot;&gt;
+                       get the premium version&lt;/a&gt; of CedPhotoFeed to get more library &lt;/div&gt;"
+                       default="" description=""/>
+
+                <field name="rendering" type="radio" default="Rokbox2"
+                       label="PLG_CONTENT_CEDPHOTOFEED_LIBRARY"
+                       description="PLG_CONTENT_CEDPHOTOFEED_LIBRARY_DESC">
+                    <option value="Html">PLG_CONTENT_CEDPHOTOFEED_LIBRARY5</option>
+                    <option value="Rokbox2">PLG_CONTENT_CEDPHOTOFEED_LIBRARY6</option>
+
+                    <option disabled="1" value="Rokbox">PLG_CONTENT_CEDPHOTOFEED_LIBRARY1</option>
+                    <option disabled="1" value="Lightbox">PLG_CONTENT_CEDPHOTOFEED_LIBRARY3</option>
+                    <option disabled="1" value="Lightbox2">PLG_CONTENT_CEDPHOTOFEED_LIBRARY2</option>
+                    <option disabled="1" value="Shadowbox">PLG_CONTENT_CEDPHOTOFEED_LIBRARY4</option>
+                    <!--<option disabled="1" value="Nanogallery">PLG_CONTENT_CEDPHOTOFEED_LIBRARY_NANO</option>-->
+                </field>
+
+                <field name="spacerRendering2" type="spacer"
+                       label="&lt;div style=&quot;
+                       font-weight:bold;font-size:11px;color:#000;padding:8px;margin:0;background:#ffd;&quot;&gt;
+                       'Download RokBox2'
+                       &lt;a target=&quot;_blank&quot; href=&quot;http://www.rockettheme.com/joomla/extensions/rokbox&quot;&gt;
+                       get Rokbox2 now&lt;/a&gt; a modern media viewer &lt;/div&gt;"
+                       default="" description=""/>
+
+            </fieldset>
+
+            <fieldset name="Sorting" label="PLG_CONTENT_CEDPHOTOFEED_TAB_SORTING">
+
+                <field name="spacerSorting" type="spacer"
+                       label="&lt;div style=&quot;
+                       font-weight:bold;font-size:11px;color:#000;padding:8px;margin:0;background:#ffd;&quot;&gt;
+                       'More Sorting method?'
+                       &lt;a target=&quot;_blank&quot; href=&quot;http://www.galaxiis.com/cedphotofeed-subscribe/&quot;&gt;
+                       get the premium version&lt;/a&gt; of CedPhotoFeed to get more sorting method like Exif, Rss feed and reverse &lt;/div&gt;"
+                       default="" description=""/>
+
+                <field name="sorting" type="radio" default="none"
+                       label="PLG_CONTENT_CEDPHOTOFEED_SORTING_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_SORTING_DESC">
+                    <option value="none">PLG_CONTENT_CEDPHOTOFEED_SORTING2</option>
+                    <option value="random">PLG_CONTENT_CEDPHOTOFEED_SORTING4</option>
+                    <option disabled="1" value="exif">PLG_CONTENT_CEDPHOTOFEED_SORTING1</option>
+                    <option disabled="1" value="reverse">PLG_CONTENT_CEDPHOTOFEED_SORTING3</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="Appearance" label="PLG_CONTENT_CEDPHOTOFEED_TAB_APPEARANCE">
+                <field name="contentlayout" type="radio" default="Flow"
+                       label="PLG_CONTENT_CEDPHOTOFEED_CONTENT_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_CONTENT_DESC" class="btn-group">
+                    <option value="Grid">PLG_CONTENT_CEDPHOTOFEED_CONTENT1</option>
+                    <option value="Flow">PLG_CONTENT_CEDPHOTOFEED_CONTENT2</option>
+                </field>
+                <field name="NumberOfColumns" type="integer" default="3"
+                       label="PLG_CONTENT_CEDPHOTOFEED_NUMBERCOLUMN_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_NUMBERCOLUMN_DESC"
+                       first="1"
+                       last="20"
+                       step="1"/>
+
+                <field name="displayGalleryTitle" type="radio" default="1"
+                       label="PLG_CONTENT_CEDPHOTOFEED_GALLERY_TITLE_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_GALLERY_TITLE_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="displayGalleryDescription" type="radio" default="1"
+                       label="PLG_CONTENT_CEDPHOTOFEED_GALLERY_TITLE_DESCRIPTION_DISPLAY_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_GALLERY_TITLE_DESCRIPTION_DISPLAY_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="displayLinkToGallery" type="radio" default="1"
+                       label="PLG_CONTENT_CEDPHOTOFEED_GALLERY_TITLE_LINK_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_GALLERY_TITLE_LINK_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="DefaultImage" type="media"
+                       default="media/plg_content_cedphotofeed/default.jpg"
+                       label="PLG_CONTENT_CEDPHOTOFEED_DEFAULT_IMAGE_LABEL"
+                       size="50"
+                       description="PLG_CONTENT_CEDPHOTOFEED_DEFAULT_IMAGE_DESC"/>
+
+            </fieldset>
+
+
+            <fieldset name="SmugMug" label="PLG_CONTENT_CEDPHOTOFEED_TAB_SMUGMUG_LABEL">
+                <field name="smugmugThumbSize" type="radio" default="Th"
+                       label="PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_THUMBSIZE_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_THUMBSIZE_DESC" class="btn-group">
+                    <option value="Ti">PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_THUMBSIZE_TI</option>
+                    <option value="Th">PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_THUMBSIZE_TH</option>
+                </field>
+
+                <field name="spacerSmugmug" type="spacer"
+                       label="&lt;div style=&quot;
+                       font-weight:bold;font-size:11px;color:#000;padding:8px;margin:0;background:#ffd;&quot;&gt;
+                       'More SmugMug Size are available'
+                       &lt;a target=&quot;_blank&quot; href=&quot;http://www.galaxiis.com/cedphotofeed-subscribe/&quot;&gt;
+                       get the premium version&lt;/a&gt; of CedPhotoFeed Now&lt;/div&gt;"
+                       default="" description=""/>
+
+                <field name="smugmugSize" type="radio" default="L"
+                       label="PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_PIC_SIZE_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_PIC_SIZE_DESC">
+
+                    <option disabled="1" value="S">PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_PIC_SIZE_S</option>
+                    <option disabled="1" value="M">PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_PIC_SIZE_M</option>
+                    <option disabled="1" value="L">PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_PIC_SIZE_L</option>
+
+                    <option value="XL">PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_PIC_SIZE_XL</option>
+                    <option value="X2">PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_PIC_SIZE_X2</option>
+                    <option value="X3">PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_PIC_SIZE_X3</option>
+                    <option value="O">PLG_CONTENT_CEDPHOTOFEED_SMUGMUG_PIC_SIZE_O</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="Flickr" label="PLG_CONTENT_CEDPHOTOFEED_TAB_FLICKR_LABEL">
+
+                <field name="spacerFlickr" type="spacer"
+                       label="&lt;div style=&quot;
+                       font-weight:bold;font-size:11px;color:#000;padding:8px;margin:0;background:#ffd;&quot;&gt;
+                       'More Flickr Size are available'
+                       &lt;a target=&quot;_blank&quot; href=&quot;http://www.galaxiis.com/cedphotofeed-subscribe/&quot;&gt;
+                       get the premium version&lt;/a&gt; of CedPhotoFeed Now&lt;/div&gt;"
+                       default="" description=""/>
+
+                <field name="flickr-thumb-size" type="radio" default="2"
+                       label="PLG_CONTENT_CEDPHOTOFEED_FLICKR_THUMB_SIZE_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_FLICKR_THUMB_SIZE_LABEL_DESC" class="btn-group">
+                    <option value="0">PLG_CONTENT_CEDPHOTOFEED_FLICKR_SIZE0</option>
+                    <option value="1">PLG_CONTENT_CEDPHOTOFEED_FLICKR_SIZE1</option>
+                    <option value="2">PLG_CONTENT_CEDPHOTOFEED_FLICKR_SIZE2</option>
+                    <option disabled="1" value="3">PLG_CONTENT_CEDPHOTOFEED_FLICKR_SIZE3</option>
+                    <option disabled="1" value="4">PLG_CONTENT_CEDPHOTOFEED_FLICKR_SIZE4</option>
+                </field>
+
+                <field name="flickr-img-size" type="radio" default="4"
+                       label="PLG_CONTENT_CEDPHOTOFEED_FLICKR_SIZE_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_FLICKR_SIZE_DESC" class="btn-group">
+                    <option value="2">PLG_CONTENT_CEDPHOTOFEED_FLICKR_SIZE2</option>
+                    <option value="3">PLG_CONTENT_CEDPHOTOFEED_FLICKR_SIZE3</option>
+                    <option disabled="1" value="4">PLG_CONTENT_CEDPHOTOFEED_FLICKR_SIZE4</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="Picasa" label="PLG_CONTENT_CEDPHOTOFEED_TAB_PICASA_LABEL">
+                <field name="picasaSize" type="radio" default="0"
+                       label="PLG_CONTENT_CEDPHOTOFEED_PICASA_SIZE_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_PICASA_SIZE_DESC" class="btn-group">
+                    <option value="0">PLG_CONTENT_CEDPHOTOFEED_PICASA_SIZE0</option>
+                    <option value="1">PLG_CONTENT_CEDPHOTOFEED_PICASA_SIZE1</option>
+                    <option value="2">PLG_CONTENT_CEDPHOTOFEED_PICASA_SIZE2</option>
+                </field>
+            </fieldset>
+            <fieldset name="Gallery G2" label="PLG_CONTENT_CEDPHOTOFEED_TAB_G2">
+                <field name="g2Width" type="integer" length="25" default="150"
+                       label="PLG_CONTENT_CEDPHOTOFEED_G2_WIDTH_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_G2_WIDTH_DESC"
+                       first="1"
+                       last="1000"
+                       step="1"/>
+                <field name="g2Height" type="integer" length="25" default="150"
+                       label="PLG_CONTENT_CEDPHOTOFEED_G2_HEIGHT_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_G2_HEIGHT_DESC"
+                       first="1"
+                       last="1000"
+                       step="1"/>
+            </fieldset>
+            <fieldset name="Generic Galleries" label="PLG_CONTENT_CEDPHOTOFEED_TAB_GENERIC">
+                <field name="genericWidth" type="integer" length="25" default="150"
+                       label="PLG_CONTENT_CEDPHOTOFEED_GENERIC_WIDTH_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_GENERIC_WIDTH_DESC"
+                       first="1"
+                       last="1000"
+                       step="1"/>
+                <field name="genericHeight" type="integer" default="150"
+                       label="PLG_CONTENT_CEDPHOTOFEED_GENERIC_HEIGHT_LABEL"
+                       description="PLG_CONTENT_CEDPHOTOFEED_GENERIC_HEIGHT_DESC"
+                       first="1"
+                       last="1000"
+                       step="1"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
