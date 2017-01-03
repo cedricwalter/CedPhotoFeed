@@ -12,6 +12,8 @@ and more...
 
 [More details](https://www.galaxiis.com/cedphotofeed-showcase/) 
 
+This is the **free version** the premium version can be bought together with support at [www.galaxiis.com](https://www.galaxiis.com)
+
 ## Demo
 [https://www.galaxiis.com/cedphotofeed-demo/](https://www.galaxiis.com/cedphotofeed-demo/)
 
