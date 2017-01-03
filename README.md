@@ -1,6 +1,6 @@
 # CedPhotoFeed for Joomla
 
-CedPhotoFeed allow you to inline a set of images from your favorite online gallery: Smugmug, Flickr, Picasa, Gallery2/Gallery3 and YouTube or any rss feed in any article.
+CedPhotoFeed for [Joomla!](https://www.joomla.org) allow you to inline a set of images from your favorite online gallery: Smugmug, Flickr, Picasa, Gallery2/Gallery3 and YouTube or any rss feed in any article.
 
 * Insert ANYWHERE in Joomla a stream of images from [SmugMug](https://www.smugmug.com), [Flickr](https://www.flickr.com), [YouTube](https://www.youtube.com) or [Gallery3](http://galleryproject.org/)
 * Support also any media RSS feed
