@@ -1,0 +1,48 @@
+.cedphotofeed {
+
+}
+
+.cedphotofeedLine {
+    margin-bottom: 2px;
+}
+
+.cedphotofeedTitle {
+
+}
+
+.cedphotofeedDescription {
+    text-indent: 50px;
+    text-align: justify;
+    color: rgb(152, 155, 162);
+    display: block;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+.cedphotofeedClear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+
+.cedphotofeedImage {
+    margin-left: 2px;
+    float: left;
+    margin-bottom: 2px;
+    border: #C2C2C2 solid 1px;
+    cursor: pointer;
+    outline-color: #A1A5A9;
+    outline-width: 1px;
+}
+
+
+
+.cedphotofeedGallery {
+    font-size: 11px;
+    font-style: italic;
+    color: gray;
+}

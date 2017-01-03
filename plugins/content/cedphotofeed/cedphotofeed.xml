@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.4" type="plugin" group="content" method="upgrade">
     <name>CedPhotoFeed | Galaxiis.com</name>
-    <creationDate>2016-08-05</creationDate>
+    <creationDate>2016-12-31</creationDate>
 
-    <version>1.2.0</version>
+    <version>1.2.1</version>
 
     <author>Galaxiis</author>
     <authorEmail>galaxiiscom@gmail.com</authorEmail>
@@ -36,7 +36,7 @@
                         name="version_msg"
                         type="galaxiismessage"
                         message="version"
-                        version="1.2.0"
+                        version="1.2.1"
                         extension_name="CedPhotoFeed"/>
 
 

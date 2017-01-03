@@ -26,7 +26,7 @@ class cedPhotofeedViewFrontpage extends JViewLegacy
 
     function defaultTpl($tpl = null)
     {
-        JToolBarHelper::title(JText::_('CedPhotofeed') . " 1.2.0",
+        JToolBarHelper::title(JText::_('CedPhotofeed') . " 1.2.1",
             JURI::root() . '/media/com_cedphotofeed/images/rss.gif');
 
         $user = JFactory::getUser();

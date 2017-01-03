@@ -56,7 +56,7 @@ JHtml::_('behavior.modal', 'a.modal');
     </div>
     <div style="float: left;">
         <div class="icon"><a
-                href="http://confluence.galaxiis.com/display/GAL/SOFTWARE+LICENSE+AGREEMENT"
+                href="https://confluence.galaxiis.com/display/GAL/SOFTWARE+LICENSE+AGREEMENT"
                 target="_blank"
                 title="<?php echo JText::_('LICENSE'); ?>"> <img
                     src="<?php  echo JURI::root() ?>/media/com_cedphotofeed/images/license.png"/>
@@ -91,7 +91,7 @@ JHtml::_('behavior.modal', 'a.modal');
     </div>
     <div style="float: left;">
         <div class="icon">
-            <a href="http://www.galaxiis.com/cedphotofeed-download/"
+            <a href="https://www.galaxiis.com/cedphotofeed-download/"
                target="_blank"
                title="<?php echo JText::_('Download Latest Version'); ?>"> <img
                     src="<?php  echo JURI::root() ?>/media/com_cedphotofeed/images/download.png"/>
@@ -109,7 +109,7 @@ JHtml::_('behavior.modal', 'a.modal');
     </div>
     <div style="float: left;">
         <div class="icon">
-            <a href="http://twitter.com/galaxiiscom"
+            <a href="https://twitter.com/galaxiiscom"
                target="_blank"
                title="<?php echo JText::_('Follow Me on Twitter'); ?>"> <img
                     src="<?php  echo JURI::root() ?>/media/com_cedphotofeed/images/twitter.png"/>
@@ -128,9 +128,9 @@ JHtml::_('behavior.modal', 'a.modal');
 </div>
 
 <div class="tagversion">
-    <h1><img src="<?php echo JURI::root() ?>media/com_cedphotofeed/images/rss.gif"/> CedPhotoFeed 1.2.0</h1>
+    <h1><img src="<?php echo JURI::root() ?>media/com_cedphotofeed/images/rss.gif"/> CedPhotoFeed 1.2.1</h1>
 
     <p>
-        <a href="http://www.galaxiis.com">Copyright (C) 2013-2016 galaxiis.com All rights reserved.</a>
+        <a href="https://www.galaxiis.com">Copyright (C) 2013-2016 galaxiis.com All rights reserved.</a>
     </p>
 </div>

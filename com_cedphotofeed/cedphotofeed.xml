@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="component" overwrite="true" method="upgrade">
+    <name>cedphotofeed</name>
+
+    <author>Galaxiis</author>
+    <authorEmail>galaxiiscom@gmail.com</authorEmail>
+    <authorUrl>www.galaxiis.com</authorUrl>
+
+    <copyright>Copyright (C) 2013-2016 galaxiis.com All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL 3.0</license>
+
+    <version>1.2.1</version>
+
+    <description>This extension allow you to inline a set of images from your favorite online gallery:
+        SmugMug, Flickr, Picasa, Gallery2, Gallery3, Youtube or any other RSS feed in any article.
+    </description>
+
+    <languages folder="language/en-GB">
+        <language tag="en-GB">en-GB.com_cedphotofeed.ini</language>
+    </languages>
+
+    <media destination="com_cedphotofeed" folder="media/com_cedphotofeed">
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+        <filename>notfound.jpg</filename>
+        <filename>index.html</filename>
+    </media>
+
+    <files folder="components/com_cedphotofeed">
+        <file>index.html</file>
+        <file>cedphotofeedhtml.php</file>
+        <folder>helpers</folder>
+        <folder>layout</folder>
+        <folder>models</folder>
+        <folder>plugins</folder>
+        <folder>rendering</folder>
+        <folder>sorting</folder>
+    </files>
+
+    <administration>
+        <menu link="option=com_cedphotofeed">cedPhotoFeed</menu>
+        <files folder="administrator/components/com_cedphotofeed">
+            <folder>views</folder>
+            <folder>helpers</folder>
+            <folder>liveupdate</folder>
+            <filename>config.xml</filename>
+            <file>cedphotofeed.php</file>
+            <file>controller.php</file>
+            <file>index.html</file>
+        </files>
+        <languages folder="administrator/language/en-GB">
+            <language tag="en-GB">en-GB.com_cedphotofeed.ini</language>
+        </languages>
+    </administration>
+
+</extension>
